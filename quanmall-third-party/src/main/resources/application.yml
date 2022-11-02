@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.94.80:8848
+    alicloud:
+      access-key: LTAI5tSV5Zyf2Lu4QjM8K4h8
+      secret-key: 4E0TYS09PxsojhdfUxSCCHQYQ3LarC
+      oss:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+        bucket: quanmall
+      sms:
+        host: https://gyytz.market.alicloudapi.com
+        path: /sms/smsSend
+        template: 6cd5d7e666924c768bf07c8d3038c3ee
+        appCode: c682a9cf84fa457099ed38e2237858b8
+        signId: b052439d89e7445080833b151460eb44
+server:
+  port: 10000
+

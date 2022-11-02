@@ -1,0 +1,23 @@
+server:
+  port: 9400
+
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://192.168.94.80:3306/quanmall_wms?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.94.80:8848
+  application:
+    name: quanmall-ware
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto

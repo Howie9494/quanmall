@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>趣安商城</title>
+    <link rel="icon" href="/static/index/img/favicon.ico">
+    <link rel="stylesheet" href="/static/index/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="/static/index/css/GL.css">
+    <script src="/static/index/js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="/static/index/js/swiper-3.4.2.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="/static/index/js/swiper-3.4.2.min.js"></script>
+
+</head>
+
+<body>
+<div class="top_find">
+    <div class="top_find_son">
+        <img src="/static/index/img/top_find_logo.png" alt="">
+        <div class="input_find">
+            <input type="text" placeholder="卸妆水" />
+            <span style="background: url('static/index/img/img_12.png') 0 -1px;"></span>
+            <a href="/static/#"><img src="/static/index/img/img_09.png" /></a>
+        </div>
+    </div>
+</div>
+<ul class="left_floor">
+    <li class="left_floor_xiang">享品质</li>
+    <li class="left_floor_fu">服饰美妆</li>
+    <li class="left_floor_jia">家电手机</li>
+    <li class="left_floor_dian">电脑数码</li>
+    <li class="left_floor_3C">3C运动</li>
+    <li class="left_floor_ai">爱吃</li>
+    <li class="left_floor_mu">母婴家居</li>
+    <li class="left_floor_tu">图书汽车</li>
+    <li class="left_floor_you">游戏金融</li>
+    <li class="left_floor_lv">旅行健康</li>
+    <li class="left_floor_hai">还没逛够</li>
+    <li class="left_floor_ding">顶部</li>
+</ul>
+<header>
+    <div class="head">
+        <a href="/static/#"><img src="/static/index/img/img_01.png" /></a>
+        <p>X</p>
+    </div>
+    <!--头部-->
+    <div class="header_head">
+        <div class="header_head_box">
+            <a href="#" class="img"><img src="/static/index/img/logo.png" /></a>
+            <b class="header_head_p">
+                <a href="#">
+                    <img src="/static/index/img/img_05.png" style="border-radius: 50%;"/>
+                    <!--<span class="glyphicon glyphicon-map-marker"></span>-->
+                    北京</a>
+                <div class="header_head_p_cs">
+                    <a href="/static/#" style="background: #C81623;color: #fff;">北京</a>
+                    <a href="/static/#">上海</a>
+                    <a href="/static/#">天津</a>
+                    <a href="/static/#">重庆</a>
+                    <a href="/static/#">河北</a>
+                    <a href="/static/#">山西</a>
+                    <a href="/static/#">河南</a>
+                    <a href="/static/#">辽宁</a>
+                    <a href="/static/#">吉林</a>
+                    <a href="/static/#">黑龙江</a>
+                    <a href="/static/#">内蒙古</a>
+                    <a href="/static/#">江苏</a>
+                    <a href="/static/#">山东</a>
+                    <a href="/static/#">安徽</a>
+                    <a href="/static/#">浙江</a>
+                    <a href="/static/#">福建</a>
+                    <a href="/static/#">湖北</a>
+                    <a href="/static/#">湖南</a>
+                    <a href="/static/#">广东</a>
+                    <a href="/static/#">广西</a>
+                    <a href="/static/#">江西</a>
+                    <a href="/static/#">四川</a>
+                    <a href="/static/#">海南</a>
+                    <a href="/static/#">贵州</a>
+                    <a href="/static/#">云南</a>
+                    <a href="/static/#">西藏</a>
+                    <a href="/static/#">陕西</a>
+                    <a href="/static/#">甘肃</a>
+                    <a href="/static/#">青海</a>
+                    <a href="/static/#">宁夏</a>
+                    <a href="/static/#">新疆</a>
+                    <a href="/static/#">港澳</a>
+                    <a href="/static/#">台湾</a>
+                    <a href="/static/#">钓鱼岛</a>
+                    <a href="/static/#">海外</a>
+                </div>
+            </b>
+            <ul>
+                <li>
+                    <a href="http://auth.quanmall.com/login.html?url=http://quanmall.com" th:if="${session.loginUser==null}">你好，请登录</a>
+                    <a href="http://auth.quanmall.com/loginOut?url=http://quanmall.com" th:if="${session.loginUser!=null}">你好，[[${#strings.isEmpty(session.loginUser.nickname)?session.loginUser.username:session.loginUser.nickname}]]</a>
+                </li>
+                <li>
+                    <a href="http://auth.quanmall.com/reg.html" class="li_2" th:if="${session.loginUser==null}">免费注册</a>
+                </li>
+                <span>|</span>
+                <li>
+                    <a href="http://member.quanmall.com/memberList.html">我的订单</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+    <!--搜索导航-->
+    <div class="header_sous">
+        <div class="header_form">
+            <input id="searchText" type="text" placeholder="" />
+            <span style="background: url('/static/index/img/img_12.png') 0 -1px;"></span>
+            <!--<button><i class="glyphicon"></i></button>-->
+            <a href="#" ><img src="/static/index/img/img_09.png" onclick="search()" /></a>
+        </div>
+        <div class="header_ico">
+            <div class="header_gw">
+                <img src="/static/index/img/img_15.png" />
+                <span><a href="http://cart.quanmall.com/cart.html">我的购物车</a></span>
+                <span>[[${session.countType==null?0:session.countType}]]</span>
+            </div>
+            <div class="header_ko">
+                <p>购物车中还没有商品，赶紧选购吧!</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/static/#">秒杀</a>
+                </li>
+                <li>
+                    <a href="/static/#">优惠券</a>
+                </li>
+                <li>
+                    <a href="/static/#">闪购</a>
+                </li>
+                <li>
+                    <a href="/static/#">拍卖</a>
+                </li>
+            </ul>
+            <div class="spacer">|</div>
+            <ul>
+                <li>
+                    <a href="/static/#">服饰</a>
+                </li>
+                <li>
+                    <a href="/static/#">超市</a>
+                </li>
+                <li>
+                    <a href="/static/#">生鲜</a>
+                </li>
+                <li>
+                    <a href="/static/#">全球购</a>
+                </li>
+            </ul>
+            <div class="spacer">|</div>
+            <ul>
+                <li>
+                    <a href="/static/#">金融</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="right">
+            <a href="/static/#"><img src="/static/index/img/img_21.png" /></a>
+        </div>
+    </div>
+    <!--轮播主体内容-->
+    <div class="header_main">
+        <div class="header_banner">
+            <div class="header_main_left">
+                <ul>
+                    <li th:each="category : ${categorys}">
+                        <a href="/static/#" class="header_main_left_a" th:attr="ctg-data=${category.catId}"><b th:text="${category.name}"></b></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header_main_center">
+                <div class="swiper-container swiper1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="/static/#"><img src="/static/index/img/lunbo.png" /></a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="/static/#"><img src="/static/index/img/lunbo3.png" /></a>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <a href="/static/#"><img src="/static/index/img/lunbo6.png" /></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="/static/#"><img src="/static/index/img/lunbo7.png" /></a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                </div>
+                <div class="header_main_center_b">
+                    <a href="/static/#"><img src="/static/index/img/5a13bf0bNe1606e58.jpg" /></a>
+                    <a href="/static/#"><img src="/static/index/img/5a154759N5385d5d6.jpg" /></a>
+                </div>
+            </div>
+            <div class="header_main_right">
+                <div class="header_main_right_user">
+                    <div class="user_info">
+                        <div class="user_info_tou">
+                            <a href="/static/#"><img class="" src="/static/index/img/touxiang.png"></a>
+                        </div>
+                        <div class="user_info_show">
+                            <p class="">Hi, 欢迎回来!</p>
+                            <p th:if="${session.loginUser==null}">
+                                <a href="http://auth.quanmall.com/login.html?url=http://quanmall.com" class="">登录</a>
+                                <a href="http://auth.quanmall.com/reg.html" class="">注册</a>
+                            </p>
+                            <p th:if="${session.loginUser!=null}">
+                                <a href="http://auth.quanmall.com/loginOut?url=http://quanmall.com">
+                                    [[${#strings.isEmpty(session.loginUser.nickname)?session.loginUser.username:session.loginUser.nickname}]]
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="user_info_hide">
+                        <a href="/static/#">新人福利</a>
+                        <a href="/static/#">PLUS会员</a>
+                    </div>
+                </div>
+                <div class="header_main_right_new">
+                    <div class="header_new">
+                        <div class="header_new_t">
+                            <p class="active">
+                                <a href="#">促销</a>
+                            </p>
+                            <p>
+                                <a href="#">公告</a>
+                            </p>
+                        </div>
+                        <div class="header_new_connter">
+                            <div class="header_new_connter_1">
+                                <ul>
+                                    <li>
+                                        <a href="#">趣安商城大促销！！！</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">趣安商城大促销！！！</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">趣安商城大促销！！！</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">趣安商城大促销！！！</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="header_new_connter_1" style="display: none;">
+                                <ul>
+                                    <li>
+                                        <a href="#">趣安商城开张啦！！！</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">趣安商城开张啦！！！</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">趣安商城开张啦！！！</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">趣安商城开张啦！！！</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_banner1">
+            <a href="/static/#" class="a">
+                <img src="/static/index/img/5a1e5ce2N034ce344.png" class="aa" />
+            </a>
+            <div class="header_banner1_div">
+                <p>X</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="section_second">
+    <!-- 第一层 -->
+    <div class="section_second_header">
+        <p class="section_second_header_img"></p>
+        <div class="section_second_header_left">
+            <p></p>
+            <span class="">秒杀</span>
+            <span>总有你想不到的低价</span>
+            <span>
+        </span>
+        </div>
+        <div class="section_second_header_right">
+            <p>当前场次</p>
+            <span class="section_second_header_right_hours">00</span>
+            <span class="section_second_header_right_mao">：</span>
+            <span class="section_second_header_right_minutes">00</span>
+            <span class="section_second_header_right_mao">：</span>
+            <span class="section_second_header_right_second">00</span>
+            <p>后结束</p>
+        </div>
+    </div>
+    <div class="section_second_list">
+        <div class="swiper-container swiper_section_second_list_left">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <ul id="seckillSkuContent">
+                    </ul>
+                </div>
+                <div class="swiper-slide">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="swiper-button-prev second_list">
+                <p></p>
+            </div>
+            <div class="swiper-button-next second_list">
+                <p></p>
+            </div>
+        </div>
+        <ul class="section_second_list_right">
+            <li>
+                <img src="/static/index/img/section_second_list_right_img.jpg" alt="">
+            </li>
+            <li>
+                <img src="/static/index/img/section_second_list_right_img.png" alt="">
+            </li>
+            <div class="section_second_list_right_button">
+                <p class="section_second_list_right_button_active"></p>
+                <p></p>
+            </div>
+        </ul>
+    </div>
+
+
+</div>
+
+
+
+</body>
+<script type="text/javascript">
+    function search() {
+        var keyword=$("#searchText").val()
+        window.location.href="http://search.quanmall.com/list.html?keyword="+keyword;
+    }
+
+    function to_href(skuId){
+        location.href = "http://item.quanmall.com/"+skuId+".html";
+    }
+    $.get("http://seckill.quanmall.com/currentSeckillSkus",function (data) {
+        if (data.data.length > 0){
+            data.data.forEach(function (item) {
+
+                $("<li onclick='to_href("+item.skuId+")'></li>")
+                    .append($("<img style='height: 130px;width: 130px' src='"+item.skuInfo.skuDefaultImg+"'/>"))
+                    .append($("<p>"+ item.skuInfo.skuTitle +"</p>"))
+                    .append("<span>"+ item.seckillPrice +"</span>")
+                    .append($("<s>"+ item.skuInfo.price +"</s>"))
+                    .appendTo("#seckillSkuContent");
+            })
+        }
+    })
+</script>
+<script type="text/javascript" src="/static/index/js/text.js"></script>
+<script type="text/javascript" src="/static/index/js/header.js"></script>
+<script type="text/javascript" src="/static/index/js/secend.js"></script>
+<script type="text/javascript" src="/static/index/js/zz.js"></script>
+<script type="text/javascript" src="/static/index/js/index.js"></script>
+<script type="text/javascript" src="/static/index/js/left,top.js"></script>
+<script type="text/javascript" src="/static/index/js/catalogLoader.js"></script>
+</html>

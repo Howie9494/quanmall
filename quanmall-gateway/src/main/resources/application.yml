@@ -1,0 +1,80 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: third_party_route
+          uri: lb://quanmall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: product_route
+          uri: lb://quanmall-product
+          predicates:
+            - Path=/api/product/**,/hello
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: coupon_route
+          uri: lb://quanmall-coupon
+          predicates:
+            - Path=/api/coupon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: member_route
+          uri: lb://quanmall-member
+          predicates:
+            - Path=/api/member/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: ware_route
+          uri: lb://quanmall-ware
+          predicates:
+            - Path=/api/ware/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+        - id: quanmall_host_route
+          uri: lb://quanmall-product
+          predicates:
+            - Host=quanmall.com,item.quanmall.com
+
+        - id: quanmall_search_route
+          uri: lb://quanmall-search
+          predicates:
+            - Host=search.quanmall.com
+
+        - id: quanmall_auth_route
+          uri: lb://quanmall-auth-server
+          predicates:
+            - Host=auth.quanmall.com
+
+        - id: quanmall_cart_route
+          uri: lb://quanmall-cart
+          predicates:
+            - Host=cart.quanmall.com
+
+        - id: quanmall_order_route
+          uri: lb://quanmall-order
+          predicates:
+            - Host=order.quanmall.com
+
+        - id: quanmall_member_route
+          uri: lb://quanmall-member
+          predicates:
+            - Host=member.quanmall.com
+
+        - id: quanmall_seckill_route
+          uri: lb://quanmall-seckill
+          predicates:
+            - Host=seckill.quanmall.com
