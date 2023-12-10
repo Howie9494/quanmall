@@ -11,7 +11,7 @@
 1. 项目环境：linux（CentOS7）、Docker（linux）、MySQL（Docker）、Redis（Docker）、数据检索：Elasticsearch（Docker）<br/>
 Maven、Git、Node、服务器Tomcat、负载均衡和反向代理服务器Nginx。
 
-2. 技术栈：SSM、SpringBoot、Mybatis-plus、RabbitMQ、Seata分布式锁<br/>
+2. 技术栈：SSM、SpringBoot、Mybatis-plus、RabbitMQ、Seata分布式事务<br/>
 SpringCloud（网关：Gateway、注册中心和配置中心：SpringCloudAlibaba Nacos、服务熔断降级限流：SpringCloudAlibaba Sentinel、
 远程调用：OpenFeign、负载均衡：Ribbon、链路追踪：Sleuth（界面：Zipkin））。
 
